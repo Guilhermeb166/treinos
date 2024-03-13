@@ -2,7 +2,7 @@
 :root{
     --face:#0866FF;
     --insta:#D90357;
-    --github:#DD3260;
+    --github:#9E5EB8;
     --twitter:#000000;
     --yt:#FF0000;
     --fundo:#DAE3EC;
@@ -12,7 +12,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body,html{
+body{
     background-color: var(--fundo);
     
 }#icons {
@@ -46,32 +46,60 @@ body,html{
     border-radius: 50%;
     transition: 0.3s;
     cursor: pointer;
+    
 }
 
-#icons .twitter i:hover{
+/*!------ Caixa de Texto ------*/
+#icons span{ 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 7px 8px;
+    font-size: 14px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.336);
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.25s;
+
+}
+
+/*!------ Ponta embaixo da caixa de texto ------*/
+#icons li i span::before{
+    position: absolute;
+    content: "";
+    height: 7px;
+    width: 7px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+#icons i:hover span {
+    opacity: 1;
+    top: -35px;
+}
+
+/*!------- Cores ao passar o mouse -------*/
+#icons .insta i:hover,#icons .insta i:hover span,#icons li.insta i span::before{
+    background-color: var(--insta);
+    color: white;
+}
+#icons .twitter i:hover,#icons .twitter i:hover span,#icons li.twitter i span::before{
     background-color: var(--twitter);
     color: white;
 }
-#icons .face i:hover{
+#icons .face i:hover,#icons .face i:hover span,#icons li.face i span::before{
     background-color: var(--face);
     color: white;
 }
-#icons .git i:hover{
+#icons .git i:hover,#icons .git i:hover span,#icons li.git i span::before{
     background-color: var(--github);
     color: white;
 }
-#icons .youtube i:hover{
+#icons .youtube i:hover,#icons .youtube i:hover span,#icons li.youtube i span::before{
     background-color: var(--yt);
     color: white;
 }
-#icons span{ 
-    display: none; 
-}
-#icons li.insta:hover span {
-    display: block;
-    background-color: var(--insta);
-}
-#icons .insta i:hover{
-    background-color: var(--insta);
-    color: white;
-}
+
